@@ -1,5 +1,6 @@
 package dev.carlesav.contactapp.presentation.contacts_list.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,10 +17,14 @@ import androidx.compose.ui.unit.dp
 import dev.carlesav.contactapp.domain.model.Contact
 
 @Composable
-fun ContactCardComponent(contact: Contact) {
+fun ContactCardComponent(
+    contact: Contact,
+    onContactClick: (Contact) -> Unit,
+) {
     Card(modifier = Modifier
         .fillMaxSize()
-        .padding(4.dp)) {
+        .padding(4.dp)
+        .clickable { onContactClick(contact) }) {
 
         Row(modifier = Modifier
             .fillMaxSize()

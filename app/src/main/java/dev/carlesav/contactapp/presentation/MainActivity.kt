@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             ContactAppTheme {
                 Surface(modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background) {
-                    ContactsListScreen()
+                    ContactsListScreen(onContactClick = { contact -> })
                 }
             }
         }

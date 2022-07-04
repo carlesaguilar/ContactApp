@@ -9,13 +9,20 @@ import androidx.compose.ui.Modifier
 import dev.carlesav.contactapp.domain.model.Contact
 
 @Composable
-fun ContactsComponent(contacts: List<Contact>) {
+fun ContactsComponent(
+    contacts: List<Contact>,
+    onContactClick: (Contact) -> Unit,
+) {
     Column(modifier = Modifier
         .fillMaxSize()
         .verticalScroll(rememberScrollState())) {
 
         contacts.forEach { contact ->
-            ContactCardComponent(contact = contact)
+            ContactCardComponent(
+                contact = contact,
+                onContactClick = { contact ->
+                    onContactClick(contact)
+                })
         }
     }
 }

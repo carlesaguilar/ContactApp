@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
+import dev.carlesav.contactapp.domain.model.Contact
 import dev.carlesav.contactapp.presentation.components.ErrorComponent
 import dev.carlesav.contactapp.presentation.components.LoadingComponent
 import dev.carlesav.contactapp.presentation.contacts_list.components.ContactsComponent
@@ -18,6 +19,7 @@ import dev.carlesav.contactapp.presentation.contacts_list.components.ContactsCom
 @Composable
 fun ContactsListScreen(
     viewModel: ContactsListViewModel = hiltViewModel(),
+    onContactClick: (Contact) -> Unit,
 ) {
     val state = viewModel.state
     val scaffoldState = rememberScaffoldState()
@@ -45,7 +47,10 @@ fun ContactsListScreen(
                     ErrorComponent(message = state.error)
                 }
                 state.items.isNotEmpty() -> {
-                    ContactsComponent(state.items)
+                    ContactsComponent(
+                        contacts = state.items,
+                        onContactClick = { contact -> onContactClick(contact) }
+                    )
                 }
             }
         }
