@@ -10,9 +10,11 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import dev.carlesav.contactapp.R
 import dev.carlesav.contactapp.presentation.components.ErrorComponent
 import dev.carlesav.contactapp.presentation.components.LoadingComponent
 import dev.carlesav.contactapp.presentation.contacts_list.components.ContactsComponent
@@ -34,7 +36,7 @@ fun ContactsListScreen(
         scaffoldState = scaffoldState,
         topBar = {
             TopAppBar(
-                title = { Text("Contacts") }
+                title = { Text(text = stringResource(id = R.string.contacts)) }
             )
         }
     ) {

@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import dev.carlesav.contactapp.domain.model.Contact
+import dev.carlesav.contactapp.presentation.components.ContactImageComponent
 
 @Composable
 fun ContactCardComponent(

@@ -1,4 +1,4 @@
-package dev.carlesav.contactapp.presentation.contacts_list.components
+package dev.carlesav.contactapp.presentation.components
 
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
