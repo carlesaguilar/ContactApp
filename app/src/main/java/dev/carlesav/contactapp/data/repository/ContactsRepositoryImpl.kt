@@ -11,7 +11,7 @@ class ContactsRepositoryImpl() : ContactsRepository {
     override fun getContacts(): Flow<Resource<List<Contact>>> = flow {
         emit(Resource.Loading(isLoading = true))
 
-        delay(3_000)
+        delay(1_000)
         val contacts = mutableListOf<Contact>()
         contacts.add(
             Contact(name = "Henry Walters",
