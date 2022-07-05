@@ -1,5 +1,6 @@
 package dev.carlesav.contactapp.presentation.contacts_list.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
@@ -8,6 +9,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.carlesav.contactapp.domain.model.Contact
 import dev.carlesav.contactapp.presentation.components.ContactImageComponent
@@ -46,5 +49,27 @@ fun ContactCardComponent(
                 Text(text = contact.location)
             }
         }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewContactCardComponent() {
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .background(color = Color.White)) {
+
+        val contact = Contact(
+            name = "Name",
+            image_url = "",
+            location = "Barcelona",
+            phone = "123",
+            email = "demo@demo.com"
+        )
+
+        ContactCardComponent(
+            contact = contact,
+            onContactClick = {}
+        )
     }
 }
