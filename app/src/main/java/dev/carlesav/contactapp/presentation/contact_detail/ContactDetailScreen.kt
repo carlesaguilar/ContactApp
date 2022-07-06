@@ -13,6 +13,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
@@ -73,7 +74,9 @@ fun ContactDetailScreen(
             }
 
             Text(text = contact.name,
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("detail-${contact.name}"),
                 style = MaterialTheme.typography.h4,
                 textAlign = TextAlign.Center)
 

@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.carlesav.contactapp.domain.model.Contact
@@ -23,6 +24,7 @@ fun ContactCardComponent(
     Card(modifier = Modifier
         .fillMaxSize()
         .padding(4.dp)
+        .testTag("card-${contact.name}")
         .clickable { onContactClick(contact) }) {
 
         Row(modifier = Modifier
