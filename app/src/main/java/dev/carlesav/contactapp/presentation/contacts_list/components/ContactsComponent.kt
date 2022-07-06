@@ -24,8 +24,8 @@ fun ContactsComponent(
         contacts.forEach { contact ->
             ContactCardComponent(
                 contact = contact,
-                onContactClick = { contact ->
-                    onContactClick(contact)
+                onContactClick = { contactClicked ->
+                    onContactClick(contactClicked)
                 })
         }
     }
