@@ -69,7 +69,7 @@ class ContactsRepositoryImpl() : ContactsRepository {
                 phone = "(027)-966-1974",
                 email = "ruben.curtis@example.com")
         )
-        contacts.random()
+        contacts.shuffle()
         emit(Resource.Success(contacts))
     }
 }
